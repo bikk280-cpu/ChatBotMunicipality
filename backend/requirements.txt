@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+supabase
+google-generativeai
+pypdf
+python-multipart
+python-jose
+passlib[bcrypt]
+itsdangerous
+slowapi
+httpx
+pymupdf
+pdfplumber
+cachetools==5.3.3
+httpx==0.27.0

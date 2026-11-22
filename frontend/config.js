@@ -1,0 +1,1 @@
+window.API_BASE = "https://backendchatbot-production-7a96.up.railway.app";
