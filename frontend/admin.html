@@ -7,18 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/admin.css?v=navy-1">
 
 </head>
-<body>
+<body class="document-admin">
 
 <div id="wrapper">
     <nav id="sidebar">
         <div class="sidebar-brand">
-            <i class="bi bi-building-fill me-2"></i> Admin Panel
+            เทศบาลเมืองศิลา
         </div>
-        <a href="/admin" class="sidebar-link active">
+        <a href="/admin" class="sidebar-link active" aria-current="page">
             <i class="bi bi-folder2-open me-2"></i> จัดการเอกสาร
         </a>
         <a href="/admin/stats" class="sidebar-link">
@@ -28,23 +27,25 @@
 
     <div id="page-content">
         <header class="topbar d-flex justify-content-between align-items-center">
-            <button class="btn btn-light border" onclick="toggleSidebar()">
+            <button class="btn btn-light border document-menu" onclick="toggleSidebar()" aria-label="เปิดหรือปิดเมนู" aria-controls="sidebar">
                 <i class="bi bi-list"></i>
             </button>
             <div class="text-end">
-                <span class="fw-bold d-block">Admin User</span>
-                <small class="text-muted"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345550595d5a7459415a5d575d4455585d404d1a535b1a405c">[email&#160;protected]</a></small>
+                <span class="fw-bold d-block">สำหรับเจ้าหน้าที่</span>
             </div>
         </header>
 
         <div class="container-fluid p-4">
+            <h1 class="document-title">จัดการเอกสาร</h1>
             <div class="stat-card">
                 <h4 class="mb-4 text-dark fw-bold">อัปโหลดเอกสารใหม่</h4>
                 <div class="row g-3">
                     <div class="col-md-5">
+                        <label for="pdfFile" class="form-label">ไฟล์ PDF</label>
                         <input type="file" class="form-control" id="pdfFile" accept=".pdf">
                     </div>
                     <div class="col-md-4">
+                        <label for="category" class="form-label">หมวดหมู่เอกสาร</label>
                         <select class="form-select" id="category">
                             <option value="ข้อมูลการบริหารงาน">ข้อมูลการบริหารงาน</option>
                             <option value="ข้อมูลหน่วยตรวจสอบภายใน">ข้อมูลหน่วยตรวจสอบภายใน</option>
@@ -139,7 +140,7 @@
             </div>
         </div> </div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/config.js"></script>
+<script src="/config.js"></script>
 <script>
     async function checkAuth() {
         try {

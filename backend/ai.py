@@ -9,8 +9,7 @@ logger = logging.getLogger(__name__)
 current_index = random.randint(0, len(API_KEYS) - 1)
 
 GENERATION_MODELS = [
-    "gemini-2.5-flash-lite",
-    "gemini-2.5-flash",
+    "gemini-3.1-flash-lite",
 ]
 
 

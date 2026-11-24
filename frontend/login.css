@@ -190,6 +190,18 @@ html, body {
 
 .form-input::placeholder { color: var(--text-muted); }
 
+body:has(.scene) { background: #f7f9fb; }
+.scene .card { border: 1px solid #d9e2eb; border-radius: 14px; box-shadow: none; animation: none; opacity: 1; transform: none; }
+.scene .card-title { margin: 0 0 4px; color: #193754; font: 700 clamp(24px, 5vw, 30px)/1.3 Sarabun, sans-serif; }
+.scene .form-input { padding-inline-start: 12px; font-size: 16px; border: 1px solid #899cb0; border-radius: 8px; background: #fff; }
+.scene .form-input:focus { border-color: #193754; box-shadow: none; }
+.scene .btn-login { background: #193754; box-shadow: none; }
+.scene .btn-login:hover:not(:disabled) { background: #244b70; transform: none; box-shadow: none; }
+.scene .btn-login::before { content: none; }
+.scene .card-footer { margin-top: 20px; }
+.scene .card-footer a, .scene .toggle-pw, .scene .toggle-pw:hover { color: #193754; }
+.scene :focus-visible { outline: 2px solid #193754; outline-offset: 2px; }
+
 .form-input:focus {
     border-color: var(--accent);
     background: rgba(59,130,246,0.04);

@@ -2,7 +2,8 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/api/login", "destination": "/login.html" },
-    { "source": "/admin/stats", "destination": "/stats.html" }
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/admin/stats", "destination": "/stats.html" },
+    { "source": "/backend/:path*", "destination": "https://backend-production-9ae77dd1.up.railway.app/:path*" }
   ]
 }

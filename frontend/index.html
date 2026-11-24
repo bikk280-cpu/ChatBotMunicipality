@@ -7,105 +7,96 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="chat.css?v=navy-3">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
-<div class="app">
-
-    <!-- ── Sidebar ── -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-emblem">
-            <div class="emblem-seal">🏛️</div>
-            <div class="emblem-name">เทศบาลเมืองศิลา</div>
-            <div class="emblem-sub">อำเภอเมือง จังหวัดขอนแก่น</div>
+<main class="municipal-chat">
+    <div class="municipal-top">
+        <div class="municipal-wrap">
+            <header class="municipal-brand">
+                <div><strong>เทศบาลเมืองศิลา</strong><br>อำเภอเมือง จังหวัดขอนแก่น</div>
+                <div class="municipal-brand-links">
+                    <details class="municipal-contact-menu">
+                        <summary>ติดต่อเทศบาล</summary>
+                        <div class="municipal-contact-options">
+                            <a href="tel:043246505">โทร 043-246505</a>
+                            <a href="tel:043246506">โทร 043-246506</a>
+                            <a href="https://www.sila-kk.go.th/">เว็บไซต์เทศบาล</a>
+                        </div>
+                    </details>
+                    <a href="login.html">สำหรับเจ้าหน้าที่</a>
+                </div>
+            </header>
         </div>
-        <div class="gold-bar"></div>
-        <div class="sidebar-body">
-            <div class="s-label">ผู้ช่วยช่วยคุณได้เรื่อง</div>
-            <div class="info-card">
-                <div class="ic-title">📋 บริการของเทศบาล</div>
-                <p>• ข้อมูลบริการและสวัสดิการ</p>
-                <p>• ขั้นตอนการติดต่อหน่วยงาน</p>
-                <p>• ข่าวสารและกิจกรรม</p>
-                <p>• ข้อมูลทั่วไปของเทศบาล</p>
-            </div>
-            <div class="s-label">ติดต่อโดยตรง</div>
-            <div class="contact-card info-card">
-                <div class="ic-title">📞 ติดต่อเทศบาล</div>
-                <p>โทร: <a href="tel:043246505">043-246505</a> หรือ <a href="tel:043246506">043-246506</a></p>
-                <p style="margin-top:6px;">เว็บไซต์: <a href="https://www.sila-kk.go.th/" target="_blank">www.sila-kk.go.th</a></p>
-            </div>
-        </div>
-        <div class="sidebar-footer">
-            <button class="admin-btn" onclick="window.location.href='login.html'">🔐 เข้าสู่ระบบ Admin</button>
-        </div>
-    </aside>
-
-    <!-- Backdrop (mobile) -->
-    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
-    <!-- ── Chat ── -->
-    <main class="chat-container">
-
-        <div class="chat-header">
-            <button class="toggle-sidebar" onclick="toggleSidebar()" aria-label="เปิด/ปิดเมนู">☰</button>
-            <div class="header-avatar">🤖</div>
-            <div class="header-info">
-                <div class="header-name">ผู้ช่วยเทศบาลเมืองศิลา</div>
-                <div class="header-status"><span class="pulse"></span>ออนไลน์ · พร้อมให้บริการ</div>
-            </div>
-        </div>
-
-        <div class="chat-body" id="chat">
-            <div class="date-divider">วันนี้</div>
-            <div class="welcome-chip">🙏 ยินดีต้อนรับสู่บริการแชทบอท เทศบาลเมืองศิลา</div>
-        </div>
-
-        <div id="complaintForm" class="complaint-form" style="display:none;">
-            <h4>📄 แบบฟอร์มแจ้งเรื่องร้องเรียน</h4>
-            <input id="issue" placeholder="หัวข้อปัญหา *">
-            <input id="location" placeholder="สถานที่เกิดเหตุ">
-            <textarea id="detail" rows="2" placeholder="รายละเอียดเพิ่มเติม"></textarea>
-            <button class="submit-btn" onclick="submitComplaint()">✅ ส่งเรื่องร้องเรียน</button>
-        </div>
-
-        <div class="toggle-quick">
-            <button onclick="toggleQuick()" id="toggleQuickBtn">⬆ แสดงเมนูด่วน</button>
-        </div>
-
-        <div class="quick-actions" id="quickActions" style="display:none;">
-            <button onclick="quickSend('แจ้งเรื่องร้องเรียน')">📄 แจ้งเรื่องร้องเรียน</button>
-            <button onclick="quickSend('ขอคำปรึกษา')">❓ ขอคำปรึกษา</button>
-            <button onclick="quickSend('ข้อมูลเทศบาล')">🏢 ข้อมูลเทศบาล</button>
-            <button onclick="quickSend('ติดต่อเทศบาล')">📞 ติดต่อเทศบาล</button>
-        </div>
-
-        <div class="chat-footer">
-            <div class="input-wrap">
-                <input id="msg" placeholder="พิมพ์ข้อความของคุณ..." onkeydown="if(event.key==='Enter') send()">
-            </div>
-            <button class="btn-send" onclick="send()" aria-label="ส่ง">➤</button>
-        </div>
-
-    </main>
-</div>
-
+    </div>
 <!-- Cookie Banner -->
 <div id="cookieBanner" class="cookie-banner" style="display:none;">
     <div class="cookie-inner">
-        <p>🍪 เว็บไซต์นี้ใช้คุกกี้เพื่อเก็บประวัติการสนทนา เพื่อประสบการณ์ที่ต่อเนื่องและดีขึ้น</p>
+        <p>อนุญาตให้ใช้คุกกี้เพื่อเก็บประวัติการสนทนาหรือไม่?</p>
         <div class="cookie-actions">
-            <button class="btn-decline" onclick="declineCookies()">ปฏิเสธ</button>
-            <button class="btn-accept" onclick="acceptCookies()">ยินยอม</button>
+            <button class="btn-decline" onclick="declineCookies()"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 6-12 12M6 6l12 12"/></svg><span>ปฏิเสธ</span></button>
+            <button class="btn-accept" onclick="acceptCookies()"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg><span>ยินยอม</span></button>
         </div>
     </div>
 </div>
 
+    <section class="municipal-opening municipal-wrap">
+        <h1>วันนี้ให้ช่วยเรื่องอะไร?</h1>
+        <section class="municipal-topics">
+            <h2>เรื่องที่สอบถามได้</h2>
+            <div class="municipal-choices">
+                <button onclick="quickSend('ข้อมูลเทศบาล')"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M9 6h.01M15 6h.01M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg><span>ข้อมูลเทศบาล</span></button>
+                <button onclick="quickSend('บริการและสวัสดิการ')"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.57 12 20l-7.5-7.43a5 5 0 1 1 7.5-6.57 5 5 0 1 1 7.5 6.57Z"/></svg><span>บริการและสวัสดิการ</span></button>
+                <button onclick="quickSend('แจ้งเรื่องร้องเรียน')"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2zM12 7v3m0 3h.01"/></svg><span>แจ้งเรื่องร้องเรียน</span></button>
+                <button onclick="quickSend('ติดต่อเทศบาล')"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg><span>ติดต่อเทศบาล</span></button>
+            </div>
+        </section>
+                <div class="municipal-conversation">
+                    <div class="chat-body" id="chat" role="log" aria-label="บทสนทนา" tabindex="0"></div>
+                    <div class="chat-jump">
+                        <button id="jumpToLatest" type="button" aria-label="ไปที่ข้อความล่าสุด" hidden><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m7-7-7 7-7-7"/></svg></button>
+                    </div>
+                    <form class="municipal-composer" onsubmit="event.preventDefault(); send()">
+                        <div class="question-field">
+                            <textarea id="msg" rows="1" maxlength="500" aria-label="คำถาม" aria-describedby="questionLimit" placeholder="พิมพ์คำถามของคุณ…"></textarea>
+                            <span id="questionLimit" hidden></span>
+                        </div>
+                        <button id="sendQuestion" type="submit" aria-label="ส่งคำถาม" title="ส่งคำถาม">
+                            <svg class="button-icon send-arrow" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7M12 19V5"/></svg>
+                        </button>
+                        <button id="stopWaiting" type="button" hidden><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/></svg><span>หยุดรอ</span></button>
+                    </form>
+                </div>
+    </section>
+    <div class="municipal-wrap municipal-content">
+<div id="complaintForm" class="complaint-form" style="display:none;">
+            <h4>📄 แบบฟอร์มแจ้งเรื่องร้องเรียน</h4>
+            <input id="issue" placeholder="หัวข้อปัญหา *">
+            <input id="location" placeholder="สถานที่เกิดเหตุ">
+            <textarea id="detail" rows="2" placeholder="รายละเอียดเพิ่มเติม"></textarea>
+            <button class="submit-btn" onclick="submitComplaint()"><svg class="button-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Zm0 0L11 13"/></svg><span>ส่งเรื่องร้องเรียน</span></button>
+        </div>
+
+    </div>
+</main>
 <script src="/config.js"></script>
 <script>
     const chat = document.getElementById("chat");
+    const jumpToLatest = document.getElementById("jumpToLatest");
+
+    function updateJumpButton() {
+        jumpToLatest.hidden = chat.scrollHeight - chat.clientHeight - chat.scrollTop <= 24;
+    }
+
+    chat.addEventListener("scroll", updateJumpButton, { passive: true });
+    new ResizeObserver(updateJumpButton).observe(chat);
+    jumpToLatest.addEventListener("click", () => {
+        chat.focus({ preventScroll: true });
+        chat.scrollTo({ top: chat.scrollHeight, behavior: "instant" });
+        updateJumpButton();
+    });
     let lastSender = null;
 
     function getNow() {
@@ -135,6 +126,10 @@
         const bubble = document.createElement("div");
         bubble.className = "bubble";
         if (sender === "bot") {
+            const label = document.createElement("span");
+            label.className = "reply-label";
+            label.textContent = "ผู้ช่วยเทศบาล";
+            col.appendChild(label);
             bubble.innerHTML = marked.parse(text || "");
             bubble.querySelectorAll("a").forEach(a => {
                 a.target = "_blank";
@@ -158,8 +153,9 @@
         }
 
         chat.appendChild(row);
-        chat.scrollTop = chat.scrollHeight;
+        chat.scrollTo({ top: chat.scrollHeight, behavior: "instant" });
         lastSender = sender;
+        return row;
     }
 
     function showTypingEffect() {
@@ -171,15 +167,46 @@
         avatar.textContent = "🤖";
         const bubble = document.createElement("div");
         bubble.className = "bubble";
-        bubble.innerHTML = `<div class="typing-dots"><span></span><span></span><span></span></div>`;
+        bubble.setAttribute("role", "status");
+        bubble.textContent = "ผู้ช่วยเทศบาลกำลังตอบ…";
         row.appendChild(avatar);
         row.appendChild(bubble);
         chat.appendChild(row);
-        chat.scrollTop = chat.scrollHeight;
+        chat.scrollTo({ top: chat.scrollHeight, behavior: "instant" });
         return row;
     }
 
+    const input = document.getElementById("msg");
+    const sendButton = document.getElementById("sendQuestion");
+    const stopButton = document.getElementById("stopWaiting");
+    let pendingRequest;
+
+    function resizeInput() {
+        const atLatest = jumpToLatest.hidden;
+        input.style.height = "auto";
+        input.style.height = Math.min(input.scrollHeight, 130) + "px";
+        const remaining = input.maxLength - input.value.length;
+        const questionLimit = document.getElementById("questionLimit");
+        questionLimit.hidden = remaining > 50;
+        questionLimit.textContent = questionLimit.hidden ? "" : `เหลือ ${remaining} ตัวอักษร`;
+        if (atLatest) chat.scrollTo({ top: chat.scrollHeight, behavior: "instant" });
+    }
+
+    input.addEventListener("input", resizeInput);
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
+            event.preventDefault();
+            send();
+        }
+    });
+    stopButton.addEventListener("click", () => pendingRequest?.abort());
+
     async function handleChatRequest(text) {
+        if (pendingRequest) return;
+        pendingRequest = new AbortController();
+        if (document.activeElement === sendButton) input.focus({ preventScroll: true });
+        sendButton.hidden = true;
+        stopButton.hidden = false;
         const consent = localStorage.getItem("chat_cookie_consent");
         const noSave = consent !== "accepted"; // ถ้าไม่ยินยอม ไม่บันทึกประวัติ แต่คุยได้
         const loader = showTypingEffect();
@@ -188,38 +215,49 @@
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",
+                signal: pendingRequest.signal,
                 body: JSON.stringify({ message: text, no_save: noSave })
             });
             const data = await res.json();
             loader.remove();
-            addMessage(data.answer, "bot");
+            if (!res.ok || typeof data.answer !== "string") throw new Error("No answer");
+            addMessage(data.answer, "bot").classList.add("reply-arrived");
         } catch (e) {
             loader.remove();
-            addMessage("ขออภัยค่ะ ระบบขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้ง", "bot");
+            const row = addMessage(e.name === "AbortError" ? "หยุดรอคำตอบแล้ว" : "รับคำตอบไม่ได้ กรุณาลองอีกครั้ง", "bot");
+            const retry = document.createElement("button");
+            retry.type = "button";
+            retry.className = "message-action";
+            retry.textContent = "ลองอีกครั้ง";
+            retry.addEventListener("click", () => {
+                if (pendingRequest) return;
+                row.remove();
+                handleChatRequest(text);
+            });
+            row.lastElementChild.appendChild(retry);
+        } finally {
+            pendingRequest = null;
+            if (document.activeElement === stopButton) input.focus({ preventScroll: true });
+            stopButton.hidden = true;
+            sendButton.hidden = false;
         }
     }
 
     function send() {
-        const input = document.getElementById("msg");
         const text = input.value.trim();
-        if (!text) return;
+        if (!text || pendingRequest) return;
         addMessage(text, "user");
         input.value = "";
+        resizeInput();
         handleChatRequest(text);
     }
 
     function quickSend(text) {
+        if (pendingRequest) return;
         addMessage(text, "user");
         handleChatRequest(text);
     }
 
-    function toggleQuick() {
-        const qa = document.getElementById("quickActions");
-        const btn = document.getElementById("toggleQuickBtn");
-        const isOpen = qa.style.display === "grid";
-        qa.style.display = isOpen ? "none" : "grid";
-        btn.innerHTML = isOpen ? "⬆ แสดงเมนูด่วน" : "⬇ ซ่อนเมนูด่วน";
-    }
 
     function toggleForm() {
         const f = document.getElementById("complaintForm");
@@ -264,8 +302,7 @@
                 return;
             }
 
-            if (data.history && data.history.length) {
-                chat.innerHTML = "";
+            if (!chat.hasChildNodes() && data.history && data.history.length) {
                 data.history.forEach(m => addMessage(m.content, m.role === "user" ? "user" : "bot", m.created_at));
             }
         } catch (e) {}
@@ -277,21 +314,11 @@
         }
     });
 
-    function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        const backdrop = document.getElementById("sidebarBackdrop");
-        const isHidden = sidebar.classList.toggle("hidden");
-        backdrop.classList.toggle("active", !isHidden);
-    }
 
     window.onload = () => {
         checkCookieConsent();
         loadHistory();
 
-        // ปิด sidebar อัตโนมัติตอนเปิดหน้าบนมือถือ
-        if (window.innerWidth <= 768) {
-            document.getElementById("sidebar").classList.add("hidden");
-        }
     };
 
 </script>

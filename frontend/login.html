@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เข้าสู่ระบบ — Admin Panel</title>
+  <title>เข้าสู่ระบบเจ้าหน้าที่ — เทศบาลเมืองศิลา</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/login.css">
+  <link rel="stylesheet" href="/login.css?v=navy-3">
 
 </head>
 <body>
-
-<!-- Background -->
-<div class="bg-grid"></div>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
 
 <!-- Lockout Overlay -->
 <div class="lockout-overlay" id="lockoutOverlay">
@@ -26,16 +21,16 @@
 </div>
 
 <!-- Login Card -->
-<div class="scene">
+<main class="scene">
   <div class="card">
 
     <div class="card-header">
-      <div class="card-title">Admin Panel</div>
-      <div class="card-sub">เทศบาลตัวอย่าง · ระบบจัดการเอกสาร</div>
+      <h1 class="card-title">เข้าสู่ระบบเจ้าหน้าที่</h1>
+      <div class="card-sub">เทศบาลเมืองศิลา</div>
     </div>
 
     <!-- Error Box -->
-    <div class="error-box" id="errorBox">
+    <div class="error-box" id="errorBox" role="alert">
       <span>⚠️</span>
       <span id="errorMsg">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</span>
     </div>
@@ -44,7 +39,6 @@
     <div class="form-group">
       <label class="form-label" for="username">ชื่อผู้ใช้</label>
       <div class="input-wrap">
-        <span class="input-icon">👤</span>
         <input
           class="form-input"
           type="text"
@@ -60,7 +54,6 @@
     <div class="form-group">
       <label class="form-label" for="password">รหัสผ่าน</label>
       <div class="input-wrap">
-        <span class="input-icon">🔑</span>
         <input
           class="form-input"
           type="password"
@@ -83,16 +76,12 @@
       <div class="spinner"></div>
     </button>
 
-    <div class="divider">ระบบปลอดภัย</div>
-
     <div class="card-footer">
-      การเชื่อมต่อเข้ารหัส HTTPS<br>
-      เฉพาะผู้ดูแลระบบที่ได้รับอนุญาตเท่านั้น<br>
       <a href="/">← กลับหน้าหลักแชทบอท</a>
     </div>
 
   </div>
-</div>
+</main>
 <script src="/config.js"></script>
 <script>
 /* ─── RATE LIMIT / LOCKOUT ─── */
@@ -219,11 +208,9 @@ async function login() {
     });
 
     if (res.ok || res.status === 200) {
-      // ✅ สำเร็จ — เก็บ credentials ไว้ใน sessionStorage แล้ว redirect
-      sessionStorage.setItem("admin_auth", btoa(`${username}:${password}`));
+      sessionStorage.removeItem("admin_auth");
       saveState({ attempts: 0, lockedUntil: 0 });
 
-      // Redirect พร้อม credentials
       window.location.href = "/admin.html";
 
     } else if (res.status === 401) {
